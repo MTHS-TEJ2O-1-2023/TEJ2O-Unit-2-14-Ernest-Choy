@@ -1,8 +1,44 @@
 /* Copyright (c) 2020 MTHS All rights reserved
  *
- * Created by: Mr. Coxall
- * Created on: Sep 2020
- * This program ...
+ * Created by: Ernest
+ * Created on: Oct 2023
+ * This program makes pixels move down diagonaly when A button is pressed and up diagonally when B button is pressed.
 */
 
-basic.showString('Hello, World!')
+//variables
+let sprite: game.LedSprite = null
+let pixelCount = 0
+
+// setup
+basic.clearScreen()
+basic.showIcon(IconNames.Happy)
+
+// on button press A
+input.onButtonPressed(Button.A, function() {
+  basic.clearScreen()
+  pixelCount = 0
+  sprite = game.createSprite(0,0)
+  while (pixelCount <= 5) {
+    sprite.set(LedSpriteProperty.X, pixelCount)
+    sprite.set(LedSpriteProperty.Y, pixelCount)
+    pixelCount = pixelCount + 1
+    basic.pause(500)
+  }
+   sprite.delete()
+   basic.showIcon(IconNames.Happy)
+})
+
+// on button press B
+input.onButtonPressed(Button.B, function () {
+    basic.clearScreen()
+    pixelCount = 5
+    sprite = game.createSprite(0, 0)
+    while (pixelCount >= 0) {
+      sprite.set(LedSpriteProperty.X, pixelCount)
+      sprite.set(LedSpriteProperty.Y, pixelCount)
+      basic.pause(500)
+      pixelCount = pixelCount - 1
+    }
+    sprite.delete()
+    basic.showIcon(IconNames.Happy)
+})
