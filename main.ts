@@ -14,10 +14,10 @@ basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
 // on button press A
-input.onButtonPressed (Button.A, function() {
+input.onButtonPressed(Button.A, function () {
   basic.clearScreen()
   pixelCount = 0
-  sprite = game.createSprite(0,0)
+  sprite = game.createSprite(0, 0)
 
   // loop
   while (pixelCount <= 5) {
@@ -38,7 +38,7 @@ input.onButtonPressed(Button.B, function () {
   pixelCount = 5
   sprite = game.createSprite(0, 0)
 
-    // loop
+   // loop
   while (pixelCount >= 0) {
     sprite.set(LedSpriteProperty.X, pixelCount)
     sprite.set(LedSpriteProperty.Y, pixelCount)
