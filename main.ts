@@ -38,7 +38,7 @@ input.onButtonPressed(Button.B, function () {
   pixelCount = 5
   sprite = game.createSprite(0, 0)
 
-   // loop
+  // loop
   while (pixelCount >= 0) {
     sprite.set(LedSpriteProperty.X, pixelCount)
     sprite.set(LedSpriteProperty.Y, pixelCount)
