@@ -16,19 +16,26 @@ display.show(Image.HAPPY)
 while True:
     if button_a.is_pressed():
         display.clear()
-        loopCount = 0
+        pixel_count = 0
 
-        while pixel_count <= 5: 
-            display.set_pixel(pixel_count ,pixel_count, 255)
+        while pixel_count < 5:
+            display.clear()
+            display.set_pixel(pixel_count, pixel_count, 8)
             pixel_count = pixel_count + 1
+            sleep(500)
+
+        display.clear()
+        display.show(Image.HAPPY)
 
     if button_b.is_pressed():
         display.clear()
-        loopCount = 5
+        loopCount = 4
 
-        while pixel_count >= 0: 
-            display.set_pixel(pixel_count ,pixel_count, 255)
+        while pixel_count > -1:
+            display.clear()
+            display.set_pixel(pixel_count, pixel_count, 8)
             pixel_count = pixel_count - 1
+            sleep(500)
 
-    display.clear()
-    display.show(Image.SAD)
+        display.clear()
+        display.show(Image.HAPPY)
